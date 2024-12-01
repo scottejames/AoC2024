@@ -1,12 +1,14 @@
 package com.scottejames.aoc2024.util;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public abstract class AbstractDay {
     private static String _input;
 
     public AbstractDay(int day) throws IOException {
-        InputFetch i = new InputFetch();
+        InputFetch i = new InputFetch("2024");
         _input = i.fetchPuzzleInput(day);
     }
 
@@ -24,5 +26,14 @@ public abstract class AbstractDay {
 
     public static void Main(String [] args){
 
+    }
+    public String getInput(){
+        return _input;
+    }
+
+    public List<String> getListString(){
+        return getInput()
+                .lines()
+                .collect(Collectors.toList());
     }
 }

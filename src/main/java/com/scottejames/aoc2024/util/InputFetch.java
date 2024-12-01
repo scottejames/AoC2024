@@ -77,7 +77,7 @@ public class InputFetch {
 
     HttpUrl getRemotePuzzleInputUrl(int day) {
         System.err.printf("Getting info for %s ", day);
-        return HttpUrl.get("https://adventofcode.com/2023/day/" + day + "/input");
+        return HttpUrl.get("https://adventofcode.com/" + _year + "/day/" + day + "/input");
     }
     synchronized String  getSessionToken() throws IOException {
         try {
