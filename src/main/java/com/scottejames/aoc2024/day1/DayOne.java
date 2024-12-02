@@ -74,7 +74,6 @@ public class DayOne extends AbstractDay {
         for (Integer key: lhs){
             mult = frequency.getOrDefault(key,0);
             if (mult!=0) mult = key * mult;
-            System.out.println("Key: " + key + " Value: " + mult);
 
             multSum += mult;
         }
