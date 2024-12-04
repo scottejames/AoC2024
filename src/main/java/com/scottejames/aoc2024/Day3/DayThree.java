@@ -20,8 +20,6 @@ public class DayThree extends AbstractDay {
 
     }
 
-
-
     public int extractCalc(String input){
         int result = 0;
         final Matcher matcher = MULT_PATTERN.matcher(input);

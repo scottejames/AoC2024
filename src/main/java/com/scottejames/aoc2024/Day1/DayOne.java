@@ -1,4 +1,4 @@
-package com.scottejames.aoc2024.day1;
+package com.scottejames.aoc2024.Day1;
 
 import com.scottejames.aoc2024.util.AbstractDay;
 
