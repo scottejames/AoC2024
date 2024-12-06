@@ -10,7 +10,11 @@ public class Grid <T>{
     public void Grid() {
     }
 
-
+    public void Grid(Grid g){
+        _data = new HashMap<>(g._data);
+        width = g.width;
+        height = g.height;
+    }
 
     public void add(Point p, T value) {
         if (p.x > width) width = p.x;

@@ -39,7 +39,7 @@ public class DayFour extends AbstractDay {
                 grid.add(new Point(j, i), line.charAt(j));
             }
         }
-//        grid.showGrid();
+        grid.showGrid();
     }
 
     @Override

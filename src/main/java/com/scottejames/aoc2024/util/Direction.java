@@ -3,6 +3,23 @@ package com.scottejames.aoc2024.util;
 public enum Direction {
     LEFT, RIGHT, UP, DOWN;
 
+
+    public  Direction turnLeft(){
+        return switch (this) {
+            case LEFT -> DOWN;
+            case RIGHT -> UP;
+            case UP -> LEFT;
+            case DOWN -> RIGHT;
+        };
+    }
+    public Direction turnRight(){
+        return switch (this) {
+            case LEFT -> UP;
+            case RIGHT -> DOWN;
+            case UP -> RIGHT;
+            case DOWN -> LEFT;
+        };
+    }
     public static Direction fromStr(String s) {
         char c = s.charAt(0);
         return switch (c) {
