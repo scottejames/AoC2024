@@ -2,13 +2,14 @@ package com.scottejames.aoc2024;
 
 import com.scottejames.aoc2024.Day3.DayThree;
 import com.scottejames.aoc2024.Day4.DayFour;
+import com.scottejames.aoc2024.Day5.DayFive;
 import com.scottejames.aoc2024.util.AbstractDay;
 
 import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        AbstractDay day = new DayFour();
+        AbstractDay day = new DayFive();
 
         String solnOne = day.solvePart1();
         String solnTwo = day.solvePart2();
