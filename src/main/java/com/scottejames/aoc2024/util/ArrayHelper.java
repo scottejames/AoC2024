@@ -37,6 +37,13 @@ public class ArrayHelper {
         }
         return result;
     }
+    public static long[] convertToLongArray(String [] input){
+        long [] result = new long[input.length];
+        for (int i = 0; i < input.length; i++) {
+            result[i] = Integer.parseInt(input[i]);
+        }
+        return result;
+    }
     private static int[] convertToArrayOfInts(final CharSequence input) {
         final int[] intArray = new int[input.length()];
         for (int i = 0; i < input.length(); i++) {

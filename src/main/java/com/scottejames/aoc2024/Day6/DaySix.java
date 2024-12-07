@@ -48,7 +48,7 @@ public class DaySix extends AbstractDay {
         int steps = 0;
         while (true){
             if (steps++ > grid.getHeight() * grid.getWidth()){
-                return null;
+                return null;  // infinite loop
             }
             path.add(p);
             Point next = p.move(d);
@@ -80,11 +80,11 @@ public class DaySix extends AbstractDay {
         Set<Point> obj =  walk();
 
         for (Point p : obj){
+            Character c = grid.get(p);
 
-            if (grid.get(p) == '^'){
+            if (c == '^'){
                 continue;
             }
-            Character c = grid.get(p);
             grid.add(p,'0');
             Set<Point> path = walk();
             if (path==null){
