@@ -55,6 +55,9 @@ public class Point {
     public Point add(Point p) {
         return new Point(x + p.x, y + p.y);
     }
+    public Point subtract(Point p) {
+        return new Point(x - p.x, y - p.y);
+    }
 
     public Point delta(Point b){
         return new Point(x- b.x , y - b.y );

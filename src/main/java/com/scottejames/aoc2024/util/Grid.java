@@ -21,6 +21,11 @@ public class Grid <T>{
         if (p.y > height) height = p.y;
         _data.put(p, value);
     }
+    public void boundedAdd(Point p, T value){
+        if (withinGrid(p)){
+            add(p,value);
+        };
+    }
     public T get(Point p) {
         if (_data.get(p) == null) {
             return null;
@@ -138,7 +143,7 @@ public class Grid <T>{
             System.out.println("");
         }
     }
-    public List<Point> getAllDataMatching(T m){
+    public List<Point> getAllPointsMatching(T m){
         var result = new ArrayList<Point>();
         for(Point p: getAllPoints()){
             if (get(p) == m){
