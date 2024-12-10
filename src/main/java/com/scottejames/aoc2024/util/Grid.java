@@ -33,6 +33,13 @@ public class Grid <T>{
         return _data.get(p);
     }
 
+    public T getOrDefault(Point p,T d) {
+        if (_data.get(p) == null) {
+            return d;
+        }
+        return _data.get(p);
+    }
+
     public List<Point> getRowPoints(int row) {
         List<Point> result = new ArrayList<>();
 
