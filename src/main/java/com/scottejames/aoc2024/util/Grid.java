@@ -7,7 +7,12 @@ public class Grid <T>{
     private int width = 0;
     private int height = 0;
 
-    public void Grid() {
+    public  Grid() {
+    }
+
+    public  Grid(int w, int h){
+        width = w -1;
+        height = h -1;
     }
 
     public void Grid(Grid g){

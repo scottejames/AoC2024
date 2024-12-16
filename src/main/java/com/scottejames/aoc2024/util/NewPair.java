@@ -9,4 +9,8 @@ public class NewPair <L,R>{
         this.first = first;
         this.second = second;
     }
+
+    public String toString(){
+        return "(" + first + "," + second + ")";
+    }
 }
