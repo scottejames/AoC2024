@@ -35,6 +35,7 @@ public class DaySixteen extends AbstractDay {
                 "#S..#.....#...#",
                 "###############"
         );
+        loadData();
     }
 
     void loadData(){
@@ -48,6 +49,9 @@ public class DaySixteen extends AbstractDay {
         }
 
     }
+
+
+
     @Override
     public String solvePart1() {
         Point start = grid.locate('S');
@@ -62,18 +66,33 @@ public class DaySixteen extends AbstractDay {
             final Reindeer current = stack.pop();
 
             Set<Point> neighbours = current.getPosition().getNeighbours();
-            for (Point neighbour : neighbours){
-                if (!grid.withinGrid(neighbour)) continue;
+            Direction direction = current.getDirection();
+            int currentDistance = distances.get(current.getPosition());
 
-                char c = grid.get(neighbour);
+            for (Direction neighbour : Direction.cardinalDirections()){
+                Point next = current.getPosition().move(neighbour);
+
+                if (grid.get(next) != '#'){
+                    int deltaDistance = (direction == neighbour) ? 1 : 1001;
+                    int newDistance = currentDistance + deltaDistance;
+                    if (newDistance < distances.getOrDefault(next,Integer.MAX_VALUE)){
+                        distances.add(next,newDistance);
+                        stack.push(new Reindeer(next,neighbour));
+                    }
+
+                }
 
             }
+
         }
-        return null;
+        int result = distances.get(end);
+        distances.showGrid();
+        return "" + result;
     }
 
     @Override
     public String solvePart2() {
+
         return null;
     }
 }

@@ -1,8 +1,13 @@
 package com.scottejames.aoc2024.util;
 
+import java.util.Set;
+
 public enum Direction {
     LEFT, RIGHT, UP, DOWN;
 
+    public static Set<Direction> cardinalDirections(){
+        return Set.of(UP,DOWN,LEFT,RIGHT);
+    }
 
     public  Direction turnLeft(){
         return switch (this) {
