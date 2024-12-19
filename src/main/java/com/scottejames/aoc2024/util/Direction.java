@@ -39,6 +39,16 @@ public enum Direction {
             default -> throw new IllegalArgumentException("Unknown direction: " + c);
         };
     }
+    public static Direction fromChar2(char c) {
+        return switch (c) {
+            case '<' -> LEFT;
+            case '>' -> RIGHT;
+            case '^' -> UP;
+            case 'v' -> DOWN;
+            default -> throw new IllegalArgumentException("Unknown direction: " + c);
+        };
+    }
+
     public static Direction direction(Point from, Point to){
         Point dist = from.delta(to);
         if ((dist.x> 0) && (dist.y>0)) throw new IllegalStateException("Not a cardinal direction " + dist);
